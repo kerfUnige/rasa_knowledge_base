@@ -1,0 +1,88 @@
+# Astuce pour les préfixes : http://prefix.cc/
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix r: <http://www.ressource.com/restaurant/> .
+@prefix h: <http://www.ressource.com/hotel/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+
+
+# Définition du schema
+r:Restaurant rdf:type rdfs:Class .
+h:Hotel rdf:type rdfs:Class .
+foaf:id rdf:type rdf:Property; rdfs:domain r:Restaurant, h:Hotel .
+foaf:name rdf:type rdf:Property; rdfs:domain r:Restaurant, h:Hotel .
+foaf:cuisine rdf:type rdf:Property; rdfs:domain r:Restaurant .
+foaf:outside_sitting rdf:type rdf:Property; rdfs:domain r:Restaurant .
+foaf:place rdf:type rdf:Property; rdfs:domain r:Restaurant, h:Hotel .
+foaf:pricing_range rdf:type rdf:Property; rdfs:domain r:Restaurant, h:Hotel .
+foaf:free_wifi rdf:type rdf:Property; rdfs:domain h:Hotel .
+foaf:swimming_pool rdf:type rdf:Property; rdfs:domain h:Hotel .
+
+
+# restaurant lacroix
+r:1 rdf:type r:Restaurant; 
+foaf:id "1"^^xsd:integer;
+foaf:name "lacroix"^^xsd:string;
+foaf:cuisine "italien"^^xsd:string;
+foaf:outside_sitting "true"^^xsd:boolean;
+foaf:place "suisse"^^xsd:string;
+foaf:pricing_range "moyen"^^xsd:string .
+
+# restaurant Donath
+r:2 rdf:type r:Restaurant; 
+foaf:id "2"^^xsd:integer;
+foaf:name "donath"^^xsd:string;
+foaf:cuisine "brésilien"^^xsd:string;
+foaf:outside_sitting "false"^^xsd:boolean;
+foaf:place "allemagne"^^xsd:string;
+foaf:pricing_range "cher"^^xsd:string .
+
+# restaurant Chez ma cousine
+r:3 rdf:type r:Restaurant; 
+foaf:id "3"^^xsd:integer;
+foaf:name "chez ma cousine"^^xsd:string;
+foaf:cuisine "brésilien"^^xsd:string;
+foaf:outside_sitting "true"^^xsd:boolean;
+foaf:place "suisse"^^xsd:string;
+foaf:pricing_range "pas cher"^^xsd:string .
+
+# restaurant le fameux
+r:4 rdf:type r:Restaurant;
+foaf:id "4"^^xsd:integer;
+foaf:name "le fameux"^^xsd:string;
+foaf:cuisine "vietnamien"^^xsd:string;
+foaf:outside_sitting "true"^^xsd:boolean;
+foaf:place "belgique"^^xsd:string;
+foaf:pricing_range "pas cher"^^xsd:string .
+
+
+# Pour les hotels
+
+# hotel hilton
+h:1 rdf:type h:Hotel;
+foaf:id "1"^^xsd:integer;
+foaf:name "hilton"^^xsd:string;
+foaf:pricing_range "moyen"^^xsd:string;
+foaf:place "suisse"^^xsd:string;
+foaf:free_wifi "true"^^xsd:boolean;
+foaf:swimming_pool "true"^^xsd:boolean .
+
+# hotel président wilson
+h:2 rdf:type h:Hotel;
+foaf:id "2"^^xsd:integer;
+foaf:name "Président Wilson"^^xsd:string;
+foaf:pricing_range "cher"^^xsd:string;
+foaf:place "allemagne"^^xsd:string;
+foaf:free_wifi "true"^^xsd:boolean;
+foaf:swimming_pool "true"^^xsd:boolean .
+
+# hotel bloom
+h:3 rdf:type h:Hotel;
+foaf:id "3"^^xsd:integer;
+foaf:name "Bloom"^^xsd:string;
+foaf:pricing_range "moyen"^^xsd:string;
+foaf:place "suisse"^^xsd:string;
+foaf:free_wifi "false"^^xsd:boolean;
+foaf:swimming_pool "false"^^xsd:boolean .

@@ -1,0 +1,6 @@
+type de question que le bot peut répondre: 
+- lister tous les restaurants
+- lister les restaurants qui se trouvent dans un pays
+- lister les restaurants qui ont une certaine tranche de prix dans un pays
+
+Les mêmes types de questions peuvent s'appliquer aux hotels.
